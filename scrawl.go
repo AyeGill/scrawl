@@ -33,23 +33,6 @@ func run(command string, input string) string {
 	return string(output)
 }
 
-func main() {
-	// Usage: scrawl filename.tex
-	//Currently output just goes to standard output
-	//No real support for multiple files, just concatenates output to stdout.
-	if len(os.Args) == 0 {
-		io.WriteString(os.Stderr, "no args")
-		doFile(os.Stdin)
-	} else {
-		io.WriteString(os.Stderr, "Some args")
-		for _, path := range os.Args[1:] {
-			io.WriteString(os.Stderr, path)
-			file, err := os.Open(path)
-			check(err)
-			doFile(file)
-		}
-	}
-}
 func doFile(file *os.File) {
 
 	scanner := bufio.NewScanner(file)
@@ -80,12 +63,17 @@ func doFile(file *os.File) {
 	}
 }
 
-// Example usage:
-// \section{Foo}
-// Here is some math $\sum f(n)$. Consider this diagram:
-// %-#string-diag-builder
-// %-#here we put some stuff
-// %-#and some more stuff
-// %-#-----
-
-// Three or more dashes ends the command.
+func main() {
+	if len(os.Args) == 0 {
+		io.WriteString(os.Stderr, "no args")
+		doFile(os.Stdin)
+	} else {
+		io.WriteString(os.Stderr, "Some args")
+		for _, path := range os.Args[1:] {
+			io.WriteString(os.Stderr, path)
+			file, err := os.Open(path)
+			check(err)
+			doFile(file)
+		}
+	}
+}

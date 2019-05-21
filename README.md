@@ -1,6 +1,7 @@
 Usage:
 
 `scrawl testfile.tex.scr > testfile.tex`
+
 `scrawl < testfile.tex.scr > testfile.tex`
 
 The syntax is as follows:

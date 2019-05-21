@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+Here is a string diagram:
+
+%-#cat > temp.strid && strid temp.strid > /dev/null && cat temp.tex
+%-#matrix {
+%-#text(r)[l, t=#$M$#]\\
+%-#text(r)[l,t=#$M$#]&&&mult(ull,dl,r)&text(r)[l, t=#$M$#]&\\
+%-#&&mult(ul,dl,)\\
+%-#text(r)[l, t=#$M$#]\\
+%-#}
+%-#---
+
+Here is more text
+
+\end{document}

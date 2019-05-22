@@ -1,0 +1,1 @@
+easy-strid cat > temp.strid && strid temp.strid > /dev/null && cat temp.tex

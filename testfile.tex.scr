@@ -15,4 +15,14 @@ Here is a string diagram:
 
 Here is more text
 
+Here we use a custom command:
+
+%-#easy-strid
+%-#matrix{
+%-#text(r)[l, t=#$X$#]\\
+%-#}
+%-#---
+
+You should see an "X".
+
 \end{document}
